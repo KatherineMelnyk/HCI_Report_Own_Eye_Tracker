@@ -18,38 +18,38 @@
 \maketitle
 
 \section{Responsibilities} % Req. 4.2
-    \begin{center}
-    \begin{tabular}{p{6cm}p{6cm}}
-        \begin{tabular}{lll}
-        \toprule
-        Task & Samantha & Kateryna \\
-        \midrule
-        Planning & 3.5 & 2.5 \\
-        \midrule
-        Coding & 0.5 & 0.5 \\
-        \midrule
-        Debugging & 1.5 & 1.5 \\
-        \midrule
-        Report & 2 & 2 \\
-        \bottomrule
+    \begin{table}[h!]
+        \begin{center}
+        \begin{tabular}{p{6cm}p{6cm}}
+            \begin{tabular}{lll}
+            \toprule
+            Task & Samantha & Kateryna \\
+            \midrule
+            Planning & 3.5 & 2.5 \\
+            \midrule
+            Coding & 0.5 & 0.5 \\
+            \midrule
+            Debugging & 1.5 & 1.5 \\
+            \midrule
+            Report & 2 & 2 \\
+            \bottomrule
+            \end{tabular}
         \end{tabular}
-   \end{tabular}
+        \caption{Time spent (in hours) by each team member.}
    \end{center}
-   
-\section{Hardware and Software} % Req. 4.3
-\subsection{Hardware} \label{modify}
-Microsoft LifeCam VX-1000 \\
-% Disassembled camera and removed IR filter
-% Used exposed, undeveloped camera film as a natural light filter
-% Attached a 1.5V Infrared LED to the top of the camera
+   \end{table}
+
+\section{Hardware and Software} % Req. 4.3 
+\label{setup}   
+\subsection{Hardware} 
+We modified a Microsoft LifeCam VX-1000 to enable eye tracking functionality. First, we removed the IR filter from the disassembled camera. We then replaced the IR filter with a sheet of exposed, undeveloped camera film to filter natural light. To improve tracking accuracy, we also attached a 1.5V infrared LED to the top of the camera. \\
+
 \subsection{Software}
-Windows 10 Home Edition, version 1903 \\
-Microsoft Visual Studio 2017
-ITU\_Gaze\_Tracker
+% Windows 10 Home Edition, version 1903.
+Eye tracking and calibration was provided by the ITU\_Gaze\_Tracker codebase provided in class. This codebase was compiled in Microsoft Visual Studio 2017 and executed on a Dell Inspiron 7386 running Windows 10.
+
 \subsection{Recording Setup}
-Dell Inspiron 7386 (resolution: 1920 x 1080) \\
-Monitor positioned 60 cm away from the chinrest \\
-Camera positioned 10 cm away from the chinrest
+The calibration stimulus was displayed on a 13.3 inch monitor with a display resolution of 1920x1080. The monitor was positioned 60 cm away from the participant and elevated so that the participant's gaze naturally fell in the center of the screen. The modified camera was positioned 10 cm away from the participant's face. To minimize head movement, the participant's head was stabilized with a chinrest. 
 
 % TODO Add the rest of the file names and modifications
 \section{ITU\_Gaze\_Tracker Modification} % Req. 4.4
@@ -61,10 +61,7 @@ Best spatial accuracy: \ang{1.6} \\
 Best spatial precision: \ang{1.2}
 
 \section{Bonus: Eye Tracking with a 3rd Party Webcam}
-%specify hardware here
-Using the same modifications outlined in  \hyperref[modify]{Section \ref{modify}} \\
-Best spatial accuracy: \ang{1.9} \\
-Best spatial precision: \ang{1.6}
+Using the same hardware modification and recording setup outlined in \hyperref[setup]{Section \ref{setup}}, we repeated the calibration procedure using a ToLuLu 1080p webcam. The best spatial accuracy achieved with this camera was \ang{1.9}, and the best spatial precision achieved was \ang{1.6}.
 \bibliography{main} % Req. 4.5
 \bibliographystyle{plain}
 
