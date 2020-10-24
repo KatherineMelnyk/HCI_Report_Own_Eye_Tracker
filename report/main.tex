@@ -1,18 +1,71 @@
-%! Author = cyberstar
-%! Date = 19.10.20
-
+% REPORT NAME: HF_Project2_Report_AzizSamantha_MelnykKateryna
 % Preamble
 \documentclass[11pt]{article}
 
 % Packages
 \usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{hyperref}
 
+\setlength{\arrayrulewidth}{1mm}
 % Document
 \begin{document}
+\title{Title \\ CS 7321 — Human Computer Interaction}
+ % Req. 4.1
+\author{Samantha Aziz, Kateryna Melnyk} 
+\date{October 28th, 2020}
+\maketitle
 
+\section{Responsibilities} % Req. 4.2
+    \begin{center}
+    \begin{tabular}{p{6cm}p{6cm}}
+        \begin{tabular}{lll}
+        \toprule
+        Task & Samantha & Kateryna \\
+        \midrule
+        Planning & 3.5 & 2.5 \\
+        \midrule
+        Coding & 0.5 & 0.5 \\
+        \midrule
+        Debugging & 1.5 & 1.5 \\
+        \midrule
+        Report & 2 & 2 \\
+        \bottomrule
+        \end{tabular}
+   \end{tabular}
+   \end{center}
+   
+\section{Hardware and Software} % Req. 4.3
+\subsection{Hardware} \label{modify}
+Microsoft LifeCam VX-1000 \\
+% Disassembled camera and removed IR filter
+% Used exposed, undeveloped camera film as a natural light filter
+% Attached a 1.5V Infrared LED to the top of the camera
+\subsection{Software}
+Windows 10 Home Edition, version 1903 \\
+Microsoft Visual Studio 2017
+ITU\_Gaze\_Tracker
+\subsection{Recording Setup}
+Dell Inspiron 7386 (resolution: 1920 x 1080) \\
+Monitor positioned 60 cm away from the chinrest \\
+Camera positioned 10 cm away from the chinrest
 
+% TODO Add the rest of the file names and modifications
+\section{ITU\_Gaze\_Tracker Modification} % Req. 4.4
+Modified SetAccuracy method to output spatial precision value alongside spatial accuracy
+\section{Challenges} % Req. 4.5
 
-    \bibliography{main}
-    \bibliographystyle{plain}
+\section{Final Results} % Req. 4.6, 4.7
+Best spatial accuracy: \ang{1.6} \\
+Best spatial precision: \ang{1.2}
+
+\section{Bonus: Eye Tracking with a 3rd Party Webcam}
+%specify hardware here
+Using the same modifications outlined in  \hyperref[modify]{Section \ref{modify}} \\
+Best spatial accuracy: \ang{1.9} \\
+Best spatial precision: \ang{1.6}
+\bibliography{main} % Req. 4.5
+\bibliographystyle{plain}
 
 \end{document}
