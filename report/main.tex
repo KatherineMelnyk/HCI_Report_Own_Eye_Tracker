@@ -3,6 +3,7 @@
 \documentclass[11pt]{article}
 
 % Packages
+\usepackage[numbers]{natbib}
 \usepackage{amsmath}
 \usepackage{siunitx}
 \usepackage{booktabs}
@@ -12,8 +13,7 @@
 % Document
 \begin{document}
 \title{Title \\ CS 7321 — Human Computer Interaction}
- % Req. 4.1
-\author{Samantha Aziz, Kateryna Melnyk} 
+\author{Samantha Aziz, Kateryna Melnyk}  % Req. 4.1
 \date{October 28th, 2020}
 \maketitle
 
@@ -31,7 +31,7 @@
             \midrule
             Debugging & 1.5 & 1.5 \\
             \midrule
-            Report & 2 & 2 \\
+            Report & 2.5 & 2 \\
             \bottomrule
             \end{tabular}
         \end{tabular}
@@ -49,20 +49,40 @@ We modified a Microsoft LifeCam VX-1000 to enable eye tracking functionality. Fi
 Eye tracking and calibration was provided by the ITU\_Gaze\_Tracker codebase provided in class. This codebase was compiled in Microsoft Visual Studio 2017 and executed on a Dell Inspiron 7386 running Windows 10.
 
 \subsection{Recording Setup}
-The calibration stimulus was displayed on a 13.3 inch monitor with a display resolution of 1920x1080. The monitor was positioned 60 cm away from the participant and elevated so that the participant's gaze naturally fell in the center of the screen. The modified camera was positioned 10 cm away from the participant's face. To minimize head movement, the participant's head was stabilized with a chinrest. 
+The calibration stimulus was displayed on an 11.5x7 inch monitor with a display resolution of 1920x1080. The monitor was positioned 60 cm away from the participant and elevated so that the participant's gaze naturally fell in the center of the screen. The modified camera was positioned 10 cm away from the participant's face. To minimize head movement, the participant's head was stabilized with a chinrest. 
 
 % TODO Add the rest of the file names and modifications
 \section{ITU\_Gaze\_Tracker Modification} % Req. 4.4
-Modified SetAccuracy method to output spatial precision value alongside spatial accuracy
-\section{Challenges} % Req. 4.5
+\subsection*{CalibrationMenuUC.xaml.cs}
+    \begin{itemize}
+        \item Modified \texttt{SetAccuracy} method to display the calculated spatial precision value alongside accuracy.
+    \end{itemize}
+\subsection*{CalibrationSettings.cs}
+    \begin{itemize}
+        \item Changed the value of \texttt{defaultDistanceFromScreen} to 600 mm.
+    \end{itemize}
+\subsection*{Interpolation.cs}
+ \begin{itemize}
+    \item Added accuracy calculation in \texttt{CalculateDegreesLeft} and \texttt{CalculateDegreesRight}.
+    \item Added a \texttt{degreesPrecision} variable and associated accessor methods. 
+    \item Implemented the \texttt{CalculatePrecision} method to calculate spatial precision for the left eye. The formula used to calculate spatial precision was adapted from \cite{Holmqvist}.
+ \end{itemize}
+\subsection*{CalibrationWindow.xaml.cs}
+    \begin{itemize}
+        \item Modified \texttt{SetAccuracy} method call to include the spatial precision parameter.
+    \end{itemize}
 
+\section{Challenges} % Req. 4.5
+\textit{Antiquated hardware -- }The Microsoft LifeCam VX-1000 is no longer being manufactured, and was thus difficult to locate and purchase. It also requires a driver to be installed, but no driver exists for the Windows 10 operating system. Installing the latest driver, which was built for Windows 7, allows the camera to function with minimal difficulty. It is unlikely that this driver will be available for download in the future. \\
+\textit{Insufficient Screen Size -- } The screen used to display the calibration stimulus measures only 13.3 inches diagonally. The calibration stimulus was therefore difficult to see at a viewing distance of 60 cm. It would be easier to achieve high-quality calibration results by presenting stimuli on a larger screen, so that the stimulus can be followed more easily.
 \section{Final Results} % Req. 4.6, 4.7
 Best spatial accuracy: \ang{1.6} \\
 Best spatial precision: \ang{1.2}
 
 \section{Bonus: Eye Tracking with a 3rd Party Webcam}
-Using the same hardware modification and recording setup outlined in \hyperref[setup]{Section \ref{setup}}, we repeated the calibration procedure using a ToLuLu 1080p webcam. The best spatial accuracy achieved with this camera was \ang{1.9}, and the best spatial precision achieved was \ang{1.6}.
+Using the same hardware modification and recording setup outlined in \hyperref[setup]{Section \ref{setup}}, we repeated the calibration procedure using a ToLuLu 1080p webcam. The disassembly procedure for the ToLuLu camera is comparable to that of a Logitech C615 camera, whose disassembly can be found in \cite{Burns}. The best spatial accuracy achieved with this camera was \ang{1.9}, and the best spatial precision achieved was \ang{1.6}.
+
+\bibliographystyle{unsrtnat}
 \bibliography{main} % Req. 4.5
-\bibliographystyle{plain}
 
 \end{document}
