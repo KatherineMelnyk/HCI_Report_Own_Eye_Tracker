@@ -9,10 +9,18 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\urlstyle{same}
 \setlength{\arrayrulewidth}{1mm}
 % Document
 \begin{document}
-\title{Title \\ CS 7321 — Human Computer Interaction}
+\title{Constructing a Homemade Eye Tracker from Consumer-Grade Web Cameras \\ CS 7321 — Human Computer Interaction}
 \author{Samantha Aziz, Kateryna Melnyk}  % Req. 4.1
 \date{October 28th, 2020}
 \maketitle
@@ -80,11 +88,11 @@ Best spatial accuracy: \ang{1.6} \\
 Best spatial precision: \ang{1.2}
 
 \section{Bonus: Eye Tracking with a 3rd Party Webcam}
-Using the same hardware modification and recording setup outlined in \hyperref[setup]{Section \ref{setup}}, we repeated the calibration procedure using a ToLuLu 1080p webcam. The disassembly procedure for the ToLuLu camera is comparable to that of a Logitech C615 camera, whose disassembly can be found in \cite{Burns}. The best spatial accuracy achieved with this camera was \ang{1.9}, and the best spatial precision achieved was \ang{1.6}.
+Using the same hardware modification and recording setup outlined in \hyperref[setup]{Section \ref{setup}}, we repeated the calibration procedure using a ToLuLu 1080p webcam. Unlike the Microsoft LifeCam VX-1000, this camera is still in production and easy to acquire. The best spatial accuracy achieved with this camera was \ang{1.9}, and the best spatial precision achieved was \ang{1.6}.
 
 %TODO: Include YouTube video link once it is posted
 \section{Video}
-The video for this project is hosted on \href{https://www.google.com/}{YouTube} at \texttt{https://www.google.com/}. \\
+The video for this project is hosted on \href{https://www.youtube.com/watch?v=XBq0RNA9ZkU}{YouTube} at \texttt{https://www.youtube.com/watch?v=XBq0RNA9ZkU} \\
 This video contains disassembly and calibration for both the Microsoft LifeCam VX-1000 and the ToLuLu camera.
 \bibliographystyle{unsrtnat}
 \bibliography{main} % Req. 4.5
