@@ -25,7 +25,9 @@
 \date{October 28th, 2020}
 \maketitle
 
-\section{Responsibilities} % Req. 4.2
+\section{Responsibilities}
+\label{sec:responsibilities} % Req. 4.2
+
     \begin{table}[h!]
         \begin{center}
         \begin{tabular}{p{6cm}p{6cm}}
@@ -44,23 +46,44 @@
             \end{tabular}
         \end{tabular}
         \caption{Time spent (in hours) by each team member.}
-   \end{center}
-   \end{table}
+        \end{center}
+        \label{tab:table_repsonsibilities}
+    \end{table}
 
-\section{Hardware and Software} % Req. 4.3 
-\label{setup}   
-\subsection{Hardware} 
-We modified a Microsoft LifeCam VX-1000 to enable eye tracking functionality. First, we removed the IR filter from the disassembled camera. We then replaced the IR filter with a sheet of exposed, undeveloped camera film to filter natural light. To improve tracking accuracy, we also attached a 1.5V infrared LED to the top of the camera. \\
+\section{Hardware and Software}
+\label{sec:hardware-and-software} % Req. 4.3
+
+\label{setup}
+\subsection{Hardware}
+\label{subsec:hardware}
+We modified a Microsoft LifeCam VX-1000 to enable eye tracking functionality.
+First, we removed the IR filter from the disassembled camera.
+We then replaced the IR filter with a sheet of exposed, undeveloped camera film
+to filter natural light.
+To improve tracking accuracy, we also attached a 1.5V infrared LED to the top of
+the camera. \\
+
 
 \subsection{Software}
+\label{subsec:software}
 % Windows 10 Home Edition, version 1903.
-Eye tracking and calibration was provided by the ITU\_Gaze\_Tracker codebase provided in class. This codebase was compiled in Microsoft Visual Studio 2017 and executed on a Dell Inspiron 7386 running Windows 10.
+Eye tracking and calibration was provided by the ITU\_Gaze\_Tracker codebase
+provided in class.
+This codebase was compiled in Microsoft Visual Studio 2017 and executed on a
+Dell Inspiron 7386 running Windows 10.
 
 \subsection{Recording Setup}
-The calibration stimulus was displayed on an 11.5x7 inch monitor with a display resolution of 1920x1080. The monitor was positioned 60 cm away from the participant and elevated so that the participant's gaze naturally fell in the center of the screen. The modified camera was positioned 10 cm away from the participant's face. To minimize head movement, the participant's head was stabilized with a chinrest. 
+\label{subsec:recording_setup}
+The calibration stimulus was displayed on an 11.5x7 inch monitor with a display
+resolution of 1920x1080.
+The monitor was positioned 60 cm away from the participant and elevated so that
+the participant's gaze naturally fell in the center of the screen.
+The modified camera was positioned 10 cm away from the participant's face.
+To minimize head movement, the participant's head was stabilized with a chinrest.
 
 % TODO Add the rest of the file names and modifications
-\section{ITU\_Gaze\_Tracker Modification} % Req. 4.4
+\section{ITU\_Gaze\_Tracker Modification}
+\label{sec:itu_gaze_tracker_modification} % Req. 4.4
 \subsection*{CalibrationMenuUC.xaml.cs}
     \begin{itemize}
         \item Modified \texttt{SetAccuracy} method to display the calculated spatial precision value alongside accuracy.
@@ -80,20 +103,47 @@ The calibration stimulus was displayed on an 11.5x7 inch monitor with a display 
         \item Modified \texttt{SetAccuracy} method call to include the spatial precision parameter.
     \end{itemize}
 
-\section{Challenges} % Req. 4.5
-\textit{Antiquated hardware -- }The Microsoft LifeCam VX-1000 is no longer being manufactured, and was thus difficult to locate and purchase. It also requires a driver to be installed, but no driver exists for the Windows 10 operating system. Installing the latest driver, which was built for Windows 7, allows the camera to function with minimal difficulty. It is unlikely that this driver will be available for download in the future. \\
-\textit{Insufficient Screen Size -- } The screen used to display the calibration stimulus measures only 13.3 inches diagonally. The calibration stimulus was therefore difficult to see at a viewing distance of 60 cm. It would be easier to achieve high-quality calibration results by presenting stimuli on a larger screen, so that the stimulus can be followed more easily.
-\section{Final Results} % Req. 4.6, 4.7
+\section{Challenges}
+\label{sec:challenges} % Req. 4.5
+\textit{Antiquated hardware -- }The Microsoft LifeCam VX-1000 is no longer being
+manufactured, and was thus difficult to locate and purchase.
+It also requires a driver to be installed, but no driver exists for the Windows
+10 operating system.
+Installing the latest driver, which was built for Windows 7, allows the camera
+to function with minimal difficulty.
+It is unlikely that this driver will be available for download in the future. \\
+
+\textit{Insufficient Screen Size -- } The screen used to display the calibration
+stimulus measures only 13.3 inches diagonally.
+The calibration stimulus was therefore difficult to see at a viewing distance of
+60 cm.
+It would be easier to achieve high-quality calibration results by presenting
+stimuli on a larger screen, so that the stimulus can be followed more easily.
+
+\section{Final Results}
+\label{sec:final-results} % Req. 4.6, 4.7
 Best spatial accuracy: \ang{1.6} \\
 Best spatial precision: \ang{1.2}
 
 \section{Bonus: Eye Tracking with a 3rd Party Webcam}
-Using the same hardware modification and recording setup outlined in \hyperref[setup]{Section \ref{setup}}, we repeated the calibration procedure using a ToLuLu 1080p webcam. Unlike the Microsoft LifeCam VX-1000, this camera is still in production and easy to acquire. The best spatial accuracy achieved with this camera was \ang{1.9}, and the best spatial precision achieved was \ang{1.6}.
+\label{sec:bonus}
+Using the same hardware modification and recording setup outlined in
+\hyperref[setup]{Section~\ref{setup}}, we repeated the calibration procedure
+using a ToLuLu 1080p webcam.
+Unlike the Microsoft LifeCam VX-1000, this camera is still in production and
+easy to acquire.
+The best spatial accuracy achieved with this camera was \ang{1.9}, and the best
+spatial precision achieved was \ang{1.6}.
 
 %TODO: Include YouTube video link once it is posted
 \section{Video}
-The video for this project is hosted on \href{https://www.youtube.com/watch?v=XBq0RNA9ZkU}{YouTube} at \texttt{https://www.youtube.com/watch?v=XBq0RNA9ZkU} \\
-This video contains disassembly and calibration for both the Microsoft LifeCam VX-1000 and the ToLuLu camera.
+\label{sec:video}
+The video for this project is hosted on
+\href{https://www.youtube.com/watch?v=XBq0RNA9ZkU}{YouTube} at
+\texttt{https://www.youtube.com/watch?v=XBq0RNA9ZkU} \\
+This video contains disassembly and calibration for both the
+Microsoft LifeCam VX-1000 and the ToLuLu camera.
+
 \bibliographystyle{unsrtnat}
 \bibliography{main} % Req. 4.5
 
