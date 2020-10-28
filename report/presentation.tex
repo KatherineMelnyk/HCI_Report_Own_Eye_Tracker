@@ -6,6 +6,7 @@
 \usepackage{wrapfig}
 \usepackage{lipsum}
 \usepackage{siunitx}
+\usepackage{xcolor}
 \graphicspath{ {photo/} }
 
 \usetheme{AnnArbor}
@@ -14,10 +15,10 @@
 %! Author = cyberstar
 %! Date = 26.10.20
 \title[Homemade Eye Tracker] %optional
-{Constructing a Homemade Eye Tracker from Consumer-Grade Web Cameras}
+{\textbf{Constructing a Homemade Eye Tracker from Consumer-Grade Web Cameras}}
 
 \author[Sam, Kate] % (optional, for multiple authors)
-{Samantha Aziz\inst{1} \and Kateryna Melnyk\inst{1}}
+{\textbf{Samantha Aziz}\inst{1} \and \textbf{Kateryna Melnyk}\inst{1}}
 
 \institute[TXSU] % (optional)
 {
@@ -133,14 +134,22 @@ Texas State University
 
     \begin{frame}
         \frametitle{Software}
+        \center
+        Here we present the full list of our \textbf{\textcolor{blue}{Software}}
+        used during experiment:
+
+        ~\
 
         \begin{itemize}
             \item Eye tracking and calibration was provided by the
-            \textbf{ITU\_Gaze\_Tracker} codebase provided in class.
-            \item This codebase was compiled in \textbf{Microsoft Visual Studio
-            2017}.
-            \item IT was executed on a \textbf{Dell Inspiron 7386} running
-            \textbf{Windows 10}.
+            \textbf{\textcolor{darkgray}{ITU\_Gaze\_Tracker}} codebase provided in
+            class.
+
+            \item This codebase was compiled in
+            \textbf{\textcolor{darkgray}{Microsoft Visual Studio2017}}.
+
+            \item IT was executed on a \textbf{\textcolor{darkgray}{Dell Inspiron 7386}}
+            running \textbf{\textcolor{darkgray}{Windows 10}}.
         \end{itemize}
 
     \end{frame}
@@ -151,9 +160,9 @@ Texas State University
 
         \begin{figure}
             \begin{center}
-                \includegraphics[width=0.7\textwidth]{Work_space_Tolulu.jpg}
+                \includegraphics[width=0.6\textwidth]{Work_space_Tolulu.jpg}
             \end{center}
-            \caption{The workspace with ToLuLu 1080p webcam}
+            \caption{The workspace with \textcolor{brown}{ToLuLu 1080p webcam}.}
             \label{fig:Workspace_Tolulu}
         \end{figure}
 
@@ -165,14 +174,56 @@ Texas State University
 
         \begin{figure}
             \begin{center}
-                \includegraphics[width=0.7\textwidth]{Work_space_VX_1000.jpg}
+                \includegraphics[width=0.6\textwidth]{Work_space_VX_1000.jpg}
             \end{center}
-            \caption{The workspace with LifeCam VX-1000}
+            \caption{The workspace with \textcolor{brown}{LifeCam VX-1000}.}
             \label{fig:Workspace_VX}
         \end{figure}
 
     \end{frame}
 
+    \begin{frame}
+        \frametitle{Modification of the ITU Gaze Tracker}
+
+        \begin{itemize}
+            \item \texttt{\textcolor{blue}{CalibrationMenuUC.xaml.cs}} \\
+                \begin{itemize}
+                    \item Modified \texttt{\textcolor{darkgray}{SetAccuracy}}
+                    method to display the calculated spatial precision value
+                    alongside accuracy.
+                \end{itemize}
+
+            \item \texttt{\textcolor{blue}{CalibrationSettings.cs}}
+                \begin{itemize}
+                    \item Changed the value of
+                    \texttt{\textcolor{darkgray}{defaultDistanceFromScreen}} to 600 mm.
+                \end{itemize}
+
+            \item \texttt{\textcolor{blue}{Interpolation.cs}}
+                \begin{itemize}
+                    \item Added accuracy calculation in
+                    \texttt{\textcolor{darkgray}{CalculateDegreesLeft}} and
+                    \texttt{\textcolor{darkgray}{CalculateDegreesRight}}.
+
+                    \item Added a \texttt{\textcolor{darkgray}{degreesPrecision}}
+                    variable and associated accessor methods.
+
+                    \item Implemented the \texttt{\textcolor{darkgray}{CalculatePrecision}}
+                    method to calculate spatial precision for the left eye.
+                    The formula used to calculate spatial precision was adapted
+                    from~\cite{Ho}.
+                \end{itemize}
+
+            \item \texttt{\textcolor{blue}{CalibrationWindow.xaml.cs}}
+                \begin{itemize}
+                    \item Modified \texttt{\textcolor{darkgray}{SetAccuracy}}
+                    method call to include the spatial precision parameter.
+                \end{itemize}
+
+        \end{itemize}
+
+    \end{frame}
+    
     \begin{frame}
         \frametitle{The best result that we were able to get with LifeCam VX-1000}
 
@@ -184,7 +235,8 @@ Texas State University
             \begin{center}
                 \includegraphics[width=0.7\textwidth]{Best_res_VX_1000.jpg}
             \end{center}
-            \caption{The best results in experiment with LifeCam VX-1000.}
+            \caption{The best results in experiment with
+            \textcolor{teal}{LifeCam VX-1000}.}
             \label{fig:Best_VX}
         \end{figure}
 
@@ -202,7 +254,8 @@ Texas State University
             \begin{center}
                 \includegraphics[width=0.7\textwidth]{Best_res_Tolulu.jpg}
             \end{center}
-            \caption{The best results in experiment with ToLuLu 1080p webcam.}
+            \caption{The best results in experiment with
+            \textcolor{teal}{ToLuLu 1080p webcam}.}
             \label{fig:Best_Tolulu}
         \end{figure}
 

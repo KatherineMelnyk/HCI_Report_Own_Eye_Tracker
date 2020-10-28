@@ -20,7 +20,8 @@
 \setlength{\arrayrulewidth}{1mm}
 % Document
 \begin{document}
-\title{Constructing a Homemade Eye Tracker from Consumer-Grade Web Cameras \\ CS 7321 — Human Computer Interaction}
+\title{Constructing a Homemade Eye Tracker from Consumer-Grade Web Cameras \\
+CS 7321 — Human Computer Interaction}
 \author{Samantha Aziz, Kateryna Melnyk}  % Req. 4.1
 \date{October 28th, 2020}
 \maketitle
@@ -84,23 +85,32 @@ To minimize head movement, the participant's head was stabilized with a chinrest
 % TODO Add the rest of the file names and modifications
 \section{ITU\_Gaze\_Tracker Modification}
 \label{sec:itu_gaze_tracker_modification} % Req. 4.4
+
 \subsection*{CalibrationMenuUC.xaml.cs}
     \begin{itemize}
-        \item Modified \texttt{SetAccuracy} method to display the calculated spatial precision value alongside accuracy.
+        \item Modified \texttt{SetAccuracy} method to display the calculated
+        spatial precision value alongside accuracy.
     \end{itemize}
 \subsection*{CalibrationSettings.cs}
     \begin{itemize}
         \item Changed the value of \texttt{defaultDistanceFromScreen} to 600 mm.
     \end{itemize}
+
 \subsection*{Interpolation.cs}
  \begin{itemize}
-    \item Added accuracy calculation in \texttt{CalculateDegreesLeft} and \texttt{CalculateDegreesRight}.
-    \item Added a \texttt{degreesPrecision} variable and associated accessor methods. 
-    \item Implemented the \texttt{CalculatePrecision} method to calculate spatial precision for the left eye. The formula used to calculate spatial precision was adapted from \cite{Holmqvist}.
+    \item Added accuracy calculation in \texttt{CalculateDegreesLeft} and
+    \texttt{CalculateDegreesRight}.
+    \item Added a \texttt{degreesPrecision} variable and associated accessor
+    methods.
+    \item Implemented the \texttt{CalculatePrecision} method to calculate
+    spatial precision for the left eye.
+    The formula used to calculate spatial precision was adapted from~\cite{Holmqvist}.
  \end{itemize}
+
 \subsection*{CalibrationWindow.xaml.cs}
     \begin{itemize}
-        \item Modified \texttt{SetAccuracy} method call to include the spatial precision parameter.
+        \item Modified \texttt{SetAccuracy} method call to include the spatial
+        precision parameter.
     \end{itemize}
 
 \section{Challenges}
